@@ -6,7 +6,7 @@ const process = (resourcePathFile, descPathFile) => {
     for (let el of arrayContent) {
         const items = el.split("=")
         if (!items[0] || !items[1]) continue
-        const name = items[0].replace(/\"/g, '')
+        const name = items[0].replace(/\"/g, '').trim()
         const value = items[1].replace(/\"|\;/g, '')
         const xml = `\t<string name="${name}">${value}</string>`
         rs.push(xml)
